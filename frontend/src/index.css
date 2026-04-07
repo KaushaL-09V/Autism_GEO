@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   Global Styles
+   ============================================================================ */
+
+* {
+  @apply antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900;
+  font-feature-settings: "rounding" 1;
+}
+
+/* ============================================================================
+   Accessible Focus States
+   ============================================================================ */
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-500;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-500;
+}
+
+/* ============================================================================
+   Scrollbar Styling
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-400 rounded-full hover:bg-neutral-500;
+}
+
+/* ============================================================================
+   Selection Styling
+   ============================================================================ */
+
+::selection {
+  @apply bg-primary-200 text-neutral-900;
+}
+
+::-moz-selection {
+  @apply bg-primary-200 text-neutral-900;
+}
+
+/* ============================================================================
+   Form Elements
+   ============================================================================ */
+
+input,
+textarea,
+select {
+  @apply transition-colors duration-200;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-primary-300 border-primary-500;
+}
+
+/* ============================================================================
+   Links
+   ============================================================================ */
+
+a {
+  @apply transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-primary-700;
+}
+
+/* ============================================================================
+   Headings
+   ============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold text-neutral-900;
+  font-feature-settings: "ss01";
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+/* ============================================================================
+   Animations & Transitions
+   ============================================================================ */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes breathing {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 300ms ease-out;
+}
+
+.animate-slide-down {
+  animation: slideDown 300ms ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 300ms ease-out;
+}
+
+/* ============================================================================
+   Utility Classes
+   ============================================================================ */
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* 👈 add this */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; /* 👈 add this */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r bg-clip-text text-transparent;
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+
+  body {
+    @apply bg-white;
+  }
+}

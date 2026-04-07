@@ -1,0 +1,363 @@
+/**
+ * Global Animation Utilities
+ * CSS animations and utilities for healthcare aesthetic
+ */
+
+/* ============================================================
+   SMOOTH SCROLLING
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBARS
+   ============================================================ */
+
+/* Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a9b8e;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a7b6e;
+}
+
+/* Firefox */
+* {
+  scrollbar-color: #4a9b8e #f1f1f1;
+  scrollbar-width: thin;
+}
+
+/* ============================================================
+   REDUCED MOTION SUPPORT
+   Disable animations for users with prefers-reduced-motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   GLASSMORPHISM EFFECT
+   Frosted glass background for premium aesthetic
+   ============================================================ */
+
+.glassmorphism {
+  background: rgba(249, 249, 247, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glassmorphism-dark {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================================
+   GRADIENT BACKGROUNDS
+   Healthcare-themed gradients
+   ============================================================ */
+
+.gradient-teal-to-blue {
+  background: linear-gradient(135deg, #4a9b8e 0%, #5b8dbe 100%);
+}
+
+.gradient-sage-to-teal {
+  background: linear-gradient(135deg, #7ba98e 0%, #4a9b8e 100%);
+}
+
+.gradient-soft-bg {
+  background: linear-gradient(180deg, #f9f9f7 0%, #f0f8f7 100%);
+}
+
+.gradient-soft-bg-dark {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f2626 100%);
+}
+
+/* ============================================================
+   SHADOW UTILITIES
+   Soft, healthcare-appropriate shadows
+   ============================================================ */
+
+.shadow-soft {
+  box-shadow: 0 4px 12px rgba(74, 155, 142, 0.08);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 10px 30px rgba(74, 155, 142, 0.12);
+}
+
+.shadow-soft-xl {
+  box-shadow: 0 20px 50px rgba(74, 155, 142, 0.15);
+}
+
+.shadow-glow-teal {
+  box-shadow: 0 0 20px rgba(74, 155, 142, 0.3);
+}
+
+.shadow-glow-blue {
+  box-shadow: 0 0 20px rgba(91, 141, 190, 0.3);
+}
+
+/* ============================================================
+   BREATHING ANIMATION UTILITY
+   Gentle pulse for result cards
+   ============================================================ */
+
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-breathing {
+  animation: breathing 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ============================================================
+   LOADING SPINNER ANIMATION
+   Smooth rotation for healthcare aesthetic
+   ============================================================ */
+
+@keyframes spin-smooth {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-smooth {
+  animation: spin-smooth 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ============================================================
+   PULSE ANIMATION (Biomarker attention)
+   ============================================================ */
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================================
+   BOUNCE ANIMATION (Subtle upward motion)
+   ============================================================ */
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================================
+   FADE IN ANIMATION
+   ============================================================ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* ============================================================
+   SLIDE UP ANIMATION
+   ============================================================ */
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+/* ============================================================
+   SCALE GROW ANIMATION
+   ============================================================ */
+
+@keyframes scale-grow {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-grow {
+  animation: scale-grow 0.3s ease-out;
+}
+
+/* ============================================================
+   GLOW ANIMATION
+   ============================================================ */
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(74, 155, 142, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(74, 155, 142, 0.5);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* ============================================================
+   BUTTON INTERACTIONS
+   Micro-interactions for healthcare aesthetic
+   ============================================================ */
+
+button,
+a[role="button"],
+input[type="button"],
+input[type="submit"] {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover:not(:disabled),
+a[role="button"]:hover,
+input[type="button"]:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(74, 155, 142, 0.15);
+}
+
+button:active:not(:disabled),
+a[role="button"]:active,
+input[type="button"]:active:not(:disabled),
+input[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   INPUT FOCUS GLOW
+   ============================================================ */
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.1);
+  border-color: #4a9b8e;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* ============================================================
+   CARD HOVER ANIMATION
+   ============================================================ */
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(74, 155, 142, 0.12);
+}
+
+/* ============================================================
+   ACCESSIBILITY: FOCUS VISIBLE RING
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid #4a9b8e;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   DARK MODE SUPPORT
+   ============================================================ */
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4a9b8e;
+  }
+
+  .glassmorphism {
+    background: rgba(17, 24, 39, 0.8);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    box-shadow: 0 0 0 3px rgba(74, 155, 142, 0.2);
+  }
+}

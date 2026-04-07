@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --bg: #f4f8f8;
+  --bg-alt: #e8f1f0;
+  --card: #ffffff;
+  --ink: #0f2b2f;
+  --ink-soft: #406366;
+  --accent: #0b8f7a;
+  --accent-deep: #046657;
+  --danger: #b53636;
+  --safe: #1f7a43;
+  --line: #c8ddda;
+  --shadow: 0 16px 40px rgba(15, 43, 47, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(11, 143, 122, 0.18), transparent 40%),
+    radial-gradient(
+      circle at 100% 30%,
+      rgba(123, 31, 64, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(180deg, var(--bg), var(--bg-alt));
+  min-height: 100vh;
+}
+
+.page {
+  width: min(1100px, 92%);
+  margin: 32px auto 40px;
+  position: relative;
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(16px);
+}
+
+.orb-a {
+  width: 260px;
+  height: 260px;
+  background: rgba(11, 143, 122, 0.2);
+  top: -70px;
+  right: -60px;
+}
+
+.orb-b {
+  width: 240px;
+  height: 240px;
+  background: rgba(181, 54, 54, 0.12);
+  bottom: -60px;
+  left: -50px;
+}
+
+.hero {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(200, 221, 218, 0.9);
+  border-radius: 26px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(4px);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent-deep);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.hero p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 43, 47, 0.07);
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+}
+
+.upload {
+  border: 1.5px dashed var(--accent);
+  border-radius: 14px;
+  padding: 14px;
+  display: block;
+  margin-bottom: 10px;
+  background: #f5fffd;
+}
+
+.upload span {
+  display: block;
+  font-weight: 700;
+}
+
+.upload small {
+  color: var(--ink-soft);
+}
+
+input[type="file"] {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+button {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-deep));
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.message.success {
+  color: var(--safe);
+}
+
+.gene-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gene-row {
+  background: #f7fbfa;
+  border: 1px solid #deecea;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.gene-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.gene-label span {
+  color: var(--ink-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+}
+
+.gene-bar-wrap {
+  background: #e2efed;
+  border-radius: 999px;
+  height: 8px;
+}
+
+.gene-bar {
+  background: linear-gradient(90deg, #23a58f, #0b8f7a);
+  height: 8px;
+  border-radius: 999px;
+}
+
+.panel-full {
+  grid-column: 1 / -1;
+}
+
+.result-card {
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.result-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.result-label {
+  margin: 0 0 4px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.clinical-note {
+  grid-column: 1 / -1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.result-card.risk {
+  border-color: #e9c2c2;
+  background: #fff8f8;
+}
+
+.result-card.risk .clinical-note {
+  background: #fde9e9;
+  color: #7b1f1f;
+}
+
+.result-card.control {
+  border-color: #c7e4d2;
+  background: #f9fffc;
+}
+
+.result-card.control .clinical-note {
+  background: #eaf8ef;
+  color: #1b6139;
+}
+
+.muted {
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-full {
+    grid-column: auto;
+  }
+
+  .result-card {
+    grid-template-columns: 1fr;
+  }
+}
