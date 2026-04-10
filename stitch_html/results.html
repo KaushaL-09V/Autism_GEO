@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#cbebcd",
+                        "outline-variant": "#c3c8c0",
+                        "surface-bright": "#f7fbe7",
+                        "on-primary-fixed": "#092010",
+                        "surface": "#f7fbe7",
+                        "primary-container": "#1e3523",
+                        "on-tertiary-container": "#80a500",
+                        "on-secondary": "#ffffff",
+                        "primary": "#08200f",
+                        "tertiary-container": "#273500",
+                        "tertiary-fixed": "#c4f33a",
+                        "on-surface-variant": "#434842",
+                        "outline": "#737972",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4c644f",
+                        "secondary-fixed-dim": "#afceb2",
+                        "on-primary-fixed-variant": "#354c39",
+                        "tertiary": "#161f00",
+                        "surface-container-low": "#f2f6e2",
+                        "background": "#f7fbe7",
+                        "secondary-container": "#cbebcd",
+                        "tertiary-fixed-dim": "#a9d616",
+                        "on-surface": "#191d11",
+                        "surface-dim": "#d8dcc9",
+                        "surface-container-high": "#e6ead6",
+                        "inverse-on-surface": "#eff3df",
+                        "on-secondary-fixed": "#06200e",
+                        "on-secondary-fixed-variant": "#324d37",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#4f6b53",
+                        "on-primary-container": "#849e87",
+                        "error": "#ba1a1a",
+                        "secondary": "#49654e",
+                        "inverse-surface": "#2e3225",
+                        "surface-container-highest": "#e0e5d1",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#ceeacf",
+                        "primary-fixed-dim": "#b2ceb4",
+                        "surface-container": "#ecf0dc",
+                        "on-background": "#191d11",
+                        "inverse-primary": "#b2ceb4",
+                        "on-tertiary-fixed-variant": "#3b4d00",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#161f00",
+                        "surface-variant": "#e0e5d1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7fbe7; color: #191d11; }
+        .headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(24px); border: 1px solid rgba(195, 200, 192, 0.15); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-emerald-950/40 backdrop-blur-xl shadow-[0px_20px_40px_rgba(25,29,17,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-emerald-900 dark:text-emerald-50 headline">
+                AutismPredictor
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors label-md uppercase tracking-widest text-xs" href="#">Home</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors label-md uppercase tracking-widest text-xs" href="#">Upload</a>
+<a class="text-emerald-950 font-bold border-b-2 border-emerald-400 label-md uppercase tracking-widest text-xs" href="#">Results</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors label-md uppercase tracking-widest text-xs" href="#">FAQ</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors label-md uppercase tracking-widest text-xs" href="#">Resources</a>
+</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-full font-bold hover:scale-105 transition-all duration-300">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="inline-block py-1 px-4 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Diagnostic Report #882-Alpha</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter headline text-primary leading-none">Analysis Results</h1>
+<p class="mt-6 text-xl text-on-surface-variant max-w-xl font-light">Comprehensive genetic screening completed. Our proprietary AI model has processed the sequenced data with high-grade clinical precision.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-4 bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">share</span>
+</button>
+<button class="p-4 bg-surface-container-lowest rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">download</span>
+</button>
+</div>
+</header>
+<!-- Prediction Hero Card -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<div class="lg:col-span-8 glass-card rounded-xl p-10 relative overflow-hidden flex flex-col justify-between min-h-[450px]">
+<div class="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" data-icon="dna">genetics</span>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="w-3 h-3 bg-tertiary rounded-full animate-pulse"></span>
+<span class="uppercase tracking-widest text-xs font-bold text-on-surface-variant">Real-time Inference Result</span>
+</div>
+<h2 class="text-4xl md:text-6xl font-bold headline text-primary mb-4">Prediction: Autism Likely</h2>
+<p class="text-lg text-on-surface-variant max-w-md">Our algorithm indicates a significant correlation between the provided genetic markers and known ASD profiles.</p>
+</div>
+<div class="mt-12">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="text-6xl font-black headline text-primary tracking-tighter">85%</span>
+<span class="text-xl font-medium text-on-surface-variant ml-2 tracking-tight">Confidence Score</span>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Probability Gauge</span>
+</div>
+</div>
+<div class="h-6 w-full bg-surface-container-low rounded-full overflow-hidden p-1">
+<div class="h-full bg-tertiary-fixed rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 bg-primary text-white rounded-xl p-10 flex flex-col justify-between">
+<div>
+<h3 class="text-2xl font-bold headline mb-4">Next Recommended Steps</h3>
+<p class="text-on-primary-container text-sm leading-relaxed mb-8">Based on the 85% probability, we suggest immediate professional consultation to discuss these findings.</p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed mt-1">medical_services</span>
+<span class="text-sm font-medium">Schedule a clinical consultation with our specialists</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed mt-1">school</span>
+<span class="text-sm font-medium">Access ASD educational resource package</span>
+</li>
+</ul>
+</div>
+<div class="mt-8">
+<button class="w-full bg-tertiary-fixed text-on-tertiary-fixed py-4 rounded-full font-bold text-center hover:scale-[1.02] transition-transform">
+                        Consult a Specialist
+                    </button>
+<button class="w-full mt-3 border border-outline-variant/30 py-4 rounded-full font-bold text-center hover:bg-white/10 transition-colors">
+                        Learn More
+                    </button>
+</div>
+</div>
+</section>
+<!-- Data Visualization & Insights Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Gene Charts -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8">
+<div class="flex justify-between items-center mb-10">
+<h3 class="text-xl font-bold headline">Top 10 Analyzed Genes</h3>
+<span class="text-[10px] font-bold uppercase tracking-widest bg-white/50 px-3 py-1 rounded-full">Deviation from Baseline</span>
+</div>
+<div class="space-y-6">
+<!-- Gene 1 -->
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter mb-2">
+<span>SHANK3</span>
+<span class="text-tertiary">92% Match</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 92%"></div>
+</div>
+</div>
+<!-- Gene 2 -->
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter mb-2">
+<span>NLGN3</span>
+<span class="text-tertiary">88% Match</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 88%"></div>
+</div>
+</div>
+<!-- Gene 3 -->
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter mb-2">
+<span>NRXN1</span>
+<span class="text-tertiary">75% Match</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%"></div>
+</div>
+</div>
+<!-- Gene 4 -->
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter mb-2">
+<span>FMR1</span>
+<span class="text-tertiary">68% Match</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 68%"></div>
+</div>
+</div>
+<!-- Gene 5 -->
+<div>
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter mb-2">
+<span>TSC1</span>
+<span class="text-tertiary">54% Match</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 54%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<button class="text-xs font-bold uppercase tracking-widest text-primary/60 hover:text-primary transition-colors flex items-center justify-center gap-2 mx-auto">
+                        View Full Sequence Data
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- What does this mean? -->
+<div class="glass-card rounded-xl p-8 flex flex-col">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-tertiary-fixed">quiz</span>
+</div>
+<h3 class="text-2xl font-bold headline mb-4">What does this result mean?</h3>
+<p class="text-sm leading-relaxed text-on-surface-variant flex-grow">
+                    A "Likely" result suggests that your genetic data contains specific variants frequently associated with Neurodevelopmental disorders. It is not a formal diagnosis, but a biological marker that requires follow-up with clinical observation and standard diagnostic criteria.
+                </p>
+<div class="mt-8 p-4 bg-white/20 rounded-xl">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">info</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Clinical Note</span>
+</div>
+<p class="text-[11px] italic text-on-surface-variant">Phenotypic expression varies significantly. Genetic predisposition is one factor in a complex diagnostic picture.</p>
+</div>
+</div>
+<!-- Gene Insights -->
+<div class="glass-card rounded-xl p-8 lg:col-span-1 overflow-hidden relative">
+<div class="absolute -right-10 -bottom-10 opacity-5">
+<span class="material-symbols-outlined text-[180px]">neurology</span>
+</div>
+<h3 class="text-xl font-bold headline mb-6">Top Gene Insights</h3>
+<div class="space-y-6">
+<div class="p-4 bg-white/40 rounded-xl border-l-4 border-tertiary">
+<h4 class="font-bold text-sm mb-1">SHANK3 Abnormality</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">High correlation with synaptic signaling variances often seen in the ASD spectrum.</p>
+</div>
+<div class="p-4 bg-white/40 rounded-xl border-l-4 border-primary">
+<h4 class="font-bold text-sm mb-1">NLGN3 Marker</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Associated with cell-adhesion molecule functions in neuronal synapses.</p>
+</div>
+<div class="p-4 bg-white/40 rounded-xl border-l-4 border-outline-variant">
+<h4 class="font-bold text-sm mb-1">Environmental Synergy</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed">Predictive markers suggest sensitivity to specific external neurological stressors.</p>
+</div>
+</div>
+</div>
+<!-- Export Actions -->
+<div class="lg:col-span-2 bg-primary-container rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-8">
+<div>
+<h3 class="text-xl font-bold headline text-white mb-2">Export Data For Specialists</h3>
+<p class="text-on-primary-container text-sm">Download raw data strings and analysis logs for external medical review.</p>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all">
+<span class="text-xs font-bold">CSV</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all">
+<span class="text-xs font-bold">JSON</span>
+<span class="material-symbols-outlined text-sm">code</span>
+</button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 px-6 py-3 bg-tertiary-fixed text-on-tertiary-fixed rounded-full transition-all">
+<span class="text-xs font-bold">PDF REPORT</span>
+<span class="material-symbols-outlined text-sm">picture_as_pdf</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-24 pb-12 bg-emerald-900 dark:bg-black">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-lime-400 headline mb-6">AutismPredictor</div>
+<p class="text-emerald-200/60 text-xs leading-relaxed max-w-[200px]">
+                    Empowering families through advanced genetic sequence analysis and AI-driven insights.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white text-xs font-bold uppercase tracking-widest mb-2">Platform</span>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Home</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Upload</a>
+<a class="text-lime-400 text-sm" href="#">Results</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Resources</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white text-xs font-bold uppercase tracking-widest mb-2">Legal</span>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Privacy Policy</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Terms of Service</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-sm" href="#">Clinical Disclaimer</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="text-white text-xs font-bold uppercase tracking-widest mb-2">Newsletter</span>
+<p class="text-emerald-200/60 text-xs mb-4">Receive the latest updates in ASD research.</p>
+<div class="flex bg-emerald-950/50 rounded-full p-1 border border-white/10 focus-within:border-lime-400/50 transition-colors">
+<input class="bg-transparent border-none focus:ring-0 text-white text-xs px-4 w-full" placeholder="Email" type="email"/>
+<button class="bg-lime-400 text-emerald-950 px-4 py-2 rounded-full font-bold text-[10px] uppercase">Join</button>
+</div>
+</div>
+</div>
+<div class="mt-20 px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/5 pt-8">
+<p class="text-emerald-200/60 text-[10px] uppercase tracking-widest">© 2024 AutismPredictor. Clinical Grade Precision.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-emerald-200/60 hover:text-lime-400 transition-colors cursor-pointer">social_leaderboard</span>
+<span class="material-symbols-outlined text-emerald-200/60 hover:text-lime-400 transition-colors cursor-pointer">brand_awareness</span>
+<span class="material-symbols-outlined text-emerald-200/60 hover:text-lime-400 transition-colors cursor-pointer">public</span>
+</div>
+</div>
+</footer>
+</body></html>

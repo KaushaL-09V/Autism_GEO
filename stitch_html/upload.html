@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload | AutismPredictor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "secondary-fixed": "#cbebcd",
+                  "outline-variant": "#c3c8c0",
+                  "surface-bright": "#f7fbe7",
+                  "on-primary-fixed": "#092010",
+                  "surface": "#f7fbe7",
+                  "primary-container": "#1e3523",
+                  "on-tertiary-container": "#80a500",
+                  "on-secondary": "#ffffff",
+                  "primary": "#08200f",
+                  "tertiary-container": "#273500",
+                  "tertiary-fixed": "#c4f33a",
+                  "on-surface-variant": "#434842",
+                  "outline": "#737972",
+                  "on-error-container": "#93000a",
+                  "surface-tint": "#4c644f",
+                  "secondary-fixed-dim": "#afceb2",
+                  "on-primary-fixed-variant": "#354c39",
+                  "tertiary": "#161f00",
+                  "surface-container-low": "#f2f6e2",
+                  "background": "#f7fbe7",
+                  "secondary-container": "#cbebcd",
+                  "tertiary-fixed-dim": "#a9d616",
+                  "on-surface": "#191d11",
+                  "surface-dim": "#d8dcc9",
+                  "surface-container-high": "#e6ead6",
+                  "inverse-on-surface": "#eff3df",
+                  "on-secondary-fixed": "#06200e",
+                  "on-secondary-fixed-variant": "#324d37",
+                  "error-container": "#ffdad6",
+                  "on-secondary-container": "#4f6b53",
+                  "on-primary-container": "#849e87",
+                  "error": "#ba1a1a",
+                  "secondary": "#49654e",
+                  "inverse-surface": "#2e3225",
+                  "surface-container-highest": "#e0e5d1",
+                  "on-tertiary": "#ffffff",
+                  "primary-fixed": "#ceeacf",
+                  "primary-fixed-dim": "#b2ceb4",
+                  "surface-container": "#ecf0dc",
+                  "on-background": "#191d11",
+                  "inverse-primary": "#b2ceb4",
+                  "on-tertiary-fixed-variant": "#3b4d00",
+                  "on-primary": "#ffffff",
+                  "on-error": "#ffffff",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed": "#161f00",
+                  "surface-variant": "#e0e5d1"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "fontFamily": {
+                  "headline": ["Manrope"],
+                  "body": ["Inter"],
+                  "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f7fbe7; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .glass-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(24px); }
+    .gradient-bg { background: linear-gradient(135deg, #08200f 0%, #1e3523 100%); }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-emerald-950/40 backdrop-blur-xl shadow-[0px_20px_40px_rgba(25,29,17,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-emerald-900 dark:text-emerald-50">AutismPredictor</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Home</a>
+<a class="text-emerald-950 dark:text-white font-bold border-b-2 border-emerald-400 hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Upload</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Results</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">FAQ</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">About</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors" href="#">Resources</a>
+</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-6 py-2.5 rounded-full font-semibold hover:scale-105 duration-300 ease-out transition-all">Get Started</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 min-h-screen px-6">
+<div class="max-w-6xl mx-auto">
+<!-- Privacy Banner (The "No Genetic Data" Trust Anchor) -->
+<div class="mb-12 flex justify-center">
+<div class="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-surface-container-low border border-outline-variant/15">
+<span class="material-symbols-outlined text-primary scale-75" style="font-variation-settings: 'FILL' 1;">encrypted</span>
+<span class="text-xs uppercase tracking-widest font-semibold text-on-surface-variant">Confidential: No genetic data is stored on our servers</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sidebar Instructions & Support -->
+<div class="lg:col-span-4 space-y-8">
+<div>
+<h1 class="text-4xl font-extrabold tracking-tight text-primary leading-tight mb-6">Upload Genomic<br/>Architecture</h1>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">Prepare your sequencing data for clinical-grade predictive analysis. Our AI models analyze epigenetic markers and structural variants.</p>
+</div>
+<div class="p-8 rounded-xl bg-surface-container-low/50 space-y-6">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary">Required Format</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">description</span>
+</div>
+<div>
+<p class="font-bold text-primary">CSV / TSV</p>
+<p class="text-xs text-on-surface-variant font-medium">Standard Genomic Format</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-lg bg-primary/5 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-sm">table_rows</span>
+</div>
+<div>
+<p class="font-bold text-primary">Gene, Value</p>
+<p class="text-xs text-on-surface-variant font-medium">Simple dual-column structure</p>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-3 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all duration-300">
+<span class="material-symbols-outlined text-lg">download</span>
+              Download Sample CSV
+            </button>
+</div>
+</div>
+<!-- Main Upload Canvas -->
+<div class="lg:col-span-8 space-y-8">
+<!-- High-Blur Glass Drag-and-Drop -->
+<div class="glass-card rounded-xl p-1 w-full relative group">
+<div class="border-2 border-dashed border-primary/20 rounded-xl p-16 flex flex-col items-center justify-center text-center transition-all group-hover:border-primary/40 group-hover:bg-white/20">
+<div class="w-20 h-20 bg-tertiary-fixed rounded-full flex items-center justify-center mb-6 shadow-xl shadow-tertiary-fixed/20 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+</div>
+<h2 class="text-2xl font-bold text-primary mb-2">Drag files to analyze</h2>
+<p class="text-on-surface-variant mb-8 font-light">or click to browse from your clinical workstation</p>
+<div class="flex gap-4">
+<span class="px-4 py-1.5 rounded-full bg-white/60 text-xs font-bold text-primary border border-outline-variant/20 uppercase tracking-tighter">Support: .CSV</span>
+<span class="px-4 py-1.5 rounded-full bg-white/60 text-xs font-bold text-primary border border-outline-variant/20 uppercase tracking-tighter">Support: .XLSX</span>
+</div>
+<input class="absolute inset-0 opacity-0 cursor-pointer" type="file"/>
+</div>
+</div>
+<!-- Real-time Preview & Processing -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="px-8 py-6 flex justify-between items-center bg-surface-container-high/30">
+<div class="flex items-center gap-3">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed"></span>
+</div>
+<h4 class="text-sm font-bold text-primary uppercase tracking-widest">AI Processing State</h4>
+</div>
+<span class="text-xs font-mono font-bold text-primary bg-white/80 px-3 py-1 rounded-full">SEQ_DATA_V1.CSV</span>
+</div>
+<div class="p-8">
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-outline-variant/15">
+<th class="pb-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Gene Identifier</th>
+<th class="pb-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Expression Value</th>
+<th class="pb-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Confidence</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-white/40 transition-colors">
+<td class="py-4 text-primary font-bold">SHANK3</td>
+<td class="py-4 font-mono text-sm text-on-surface-variant">0.8423</td>
+<td class="py-4 text-right">
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded">98.2%</span>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="py-4 text-primary font-bold">NLGN3</td>
+<td class="py-4 font-mono text-sm text-on-surface-variant">1.1092</td>
+<td class="py-4 text-right">
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded">94.7%</span>
+</td>
+</tr>
+<tr class="hover:bg-white/40 transition-colors">
+<td class="py-4 text-primary font-bold">PTEN</td>
+<td class="py-4 font-mono text-sm text-on-surface-variant">0.4561</td>
+<td class="py-4 text-right">
+<span class="text-xs font-bold text-tertiary px-2 py-1 bg-tertiary-fixed rounded">91.1%</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Progress Indicator -->
+<div class="mt-10">
+<div class="flex justify-between items-end mb-3">
+<span class="text-sm font-bold text-primary uppercase tracking-widest">Neural Analysis Progress</span>
+<span class="text-xl font-bold text-primary">64%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-emerald-600 rounded-full w-[64%]"></div>
+</div>
+<p class="mt-4 text-xs text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs animate-spin">refresh</span>
+                  Mapping topological genetic variance in real-time...
+                </p>
+</div>
+</div>
+</div>
+<div class="flex justify-end pt-4">
+<button class="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 duration-300 ease-out flex items-center gap-3 shadow-xl shadow-primary/20">
+              Run Comprehensive Analysis
+              <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-emerald-900 dark:bg-black w-full pt-24 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-lime-400">AutismPredictor</div>
+<p class="text-emerald-200/60 text-xs uppercase tracking-widest leading-relaxed">© 2024 AutismPredictor. Clinical Grade Precision. Designed for high-end genomic diagnostics.</p>
+</div>
+<div>
+<h5 class="text-emerald-50 font-bold mb-6">Platform</h5>
+<ul class="space-y-4 text-xs uppercase tracking-widest">
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Home</a></li>
+<li><a class="text-lime-400" href="#">Upload</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Results</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-emerald-50 font-bold mb-6">Resources</h5>
+<ul class="space-y-4 text-xs uppercase tracking-widest">
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">About</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Clinical Guide</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Whitepaper</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-emerald-50 font-bold mb-6">Legal</h5>
+<ul class="space-y-4 text-xs uppercase tracking-widest">
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all font-bold" href="#">Clinical Disclaimer</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

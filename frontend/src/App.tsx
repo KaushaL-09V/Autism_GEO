@@ -1,11 +1,12 @@
 /**
  * Root App Component
- * Handles page routing and state management
- * CRITICAL: Includes medical consent modal
+ * Handles page routing, auth state, and session management.
+ * CRITICAL: Includes medical consent modal.
  */
 
-// import React, { useState, useEffect } from "react";
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import Header from "./components/Layout/Header";
 import Footer from "./components/Layout/Footer";
 import HomePage from "./components/Pages/HomePage";
@@ -13,23 +14,58 @@ import UploadPage from "./components/Pages/UploadPage";
 import ResultsPage from "./components/Pages/ResultsPage";
 import AboutPage from "./components/Pages/AboutPage";
 import FAQPage from "./components/Pages/FAQPage";
+import SupportPage from "./components/Pages/SupportPage";
+import LoginPage from "./components/Pages/LoginPage";
+import SignUpPage from "./components/Pages/SignUpPage";
 import ConsentModal from "./components/ConsentModal";
+import PageWrapper from "./components/AnimatedComponents/PageWrapper";
 import { usePredictor } from "./hooks/usePredictor";
-// import { GeneExpression } from "./types";
 
-type PageType = "home" | "upload" | "results" | "about" | "faq" | "contact";
+type PageType =
+  | "home"
+  | "upload"
+  | "results"
+  | "about"
+  | "faq"
+  | "support"
+  | "contact"
+  | "login"
+  | "signup";
 
-const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<PageType>("home");
+/* ─── Auth pages don't render the shared Header / Footer ──── */
+const AUTH_PAGES: PageType[] = ["login", "signup"];
+
+/* ─── Pages that require login to access ─────────────────── */
+const PROTECTED_PAGES: PageType[] = ["upload", "results"];
+
+/* ═══════════════════════════════════════════════════════════ */
+const AppInner: React.FC = () => {
+  const { isAuthenticated } = useAuth();
+
+  const [currentPage, setCurrentPage] = useState<PageType>(() => {
+    // If user already has a session, land on home; otherwise go to login
+    const stored = localStorage.getItem("autism_predictor_user");
+    return stored ? "home" : "login";
+  });
+
   const [showConsent, setShowConsent] = useState(() => {
-    // Only show if user hasn't accepted yet
     return !localStorage.getItem("consent_accepted");
   });
-  const { prediction, geneData, reset, predict, error, uploadStatus } = usePredictor();
+
+  const { prediction, geneData, reset, predict, error, uploadStatus } =
+    usePredictor();
 
   const handleNavigate = (page: string) => {
-    setCurrentPage(page as PageType);
-    // Scroll to top on page change
+    const target = page as PageType;
+
+    // Redirect unauthenticated users away from protected pages
+    if (PROTECTED_PAGES.includes(target) && !isAuthenticated) {
+      setCurrentPage("login");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    setCurrentPage(target);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -38,59 +74,153 @@ const App: React.FC = () => {
     setCurrentPage("upload");
   };
 
+  const isAuthPage = AUTH_PAGES.includes(currentPage);
+
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-50">
-      {/* CONSENT MODAL - CRITICAL FOR MEDICAL COMPLIANCE */}
+    <div
+      className="flex flex-col min-h-screen"
+      style={{ background: "var(--surface)" }}
+    >
+      {/* CONSENT MODAL — CRITICAL FOR MEDICAL COMPLIANCE */}
       <ConsentModal
         isOpen={showConsent}
         onAccept={() => setShowConsent(false)}
       />
 
-      {/* Header */}
-      <Header currentPage={currentPage} onNavigate={handleNavigate} />
+      {/* Header — hidden on auth pages */}
+      {!isAuthPage && (
+        <Header currentPage={currentPage} onNavigate={handleNavigate} />
+      )}
 
       {/* Main Content */}
-      <main id="main-content" className="flex-1">
-        {currentPage === "home" && <HomePage onNavigate={handleNavigate} />}
-        {currentPage === "upload" && (
-          <UploadPage
-            onPredictionComplete={() => setCurrentPage("results")}
-            predict={predict}
-            error={error}
-            uploadStatus={uploadStatus}
-            geneData={geneData}
-          />
-        )}
-        {currentPage === "results" && (
-          <ResultsPage
-            prediction={prediction}
-            geneData={geneData}
-            onUploadNew={handleUploadNew}
-          />
-        )}
-        {currentPage === "about" && <AboutPage />}
-        {currentPage === "faq" && <FAQPage />}
-        {currentPage === "contact" && (
-          <div className="min-h-screen bg-neutral-50 px-4 py-16 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold text-neutral-900 mb-4">
-                Contact Us
-              </h1>
-              <p className="text-lg text-neutral-600 mb-8">
-                Email: contact@autismpredictor.org
-              </p>
-              <p className="text-neutral-600">
-                We'll respond to your inquiry as soon as possible.
-              </p>
-            </div>
-          </div>
-        )}
+      <main
+        id="main-content"
+        className="flex-1"
+        style={{ background: "var(--surface)" }}
+      >
+        <AnimatePresence mode="wait">
+          {/* ── Auth pages ── */}
+          {currentPage === "login" && (
+            <LoginPage key="login" onNavigate={handleNavigate} />
+          )}
+
+          {currentPage === "signup" && (
+            <SignUpPage key="signup" onNavigate={handleNavigate} />
+          )}
+
+          {/* ── App pages ── */}
+          {currentPage === "home" && (
+            <PageWrapper key="home">
+              <HomePage onNavigate={handleNavigate} />
+            </PageWrapper>
+          )}
+
+          {currentPage === "upload" && (
+            <PageWrapper key="upload">
+              <UploadPage
+                onPredictionComplete={() => setCurrentPage("results")}
+                predict={predict}
+                error={error}
+                uploadStatus={uploadStatus}
+                geneData={geneData}
+              />
+            </PageWrapper>
+          )}
+
+          {currentPage === "results" && (
+            <PageWrapper key="results">
+              <ResultsPage
+                prediction={prediction}
+                geneData={geneData}
+                onUploadNew={handleUploadNew}
+              />
+            </PageWrapper>
+          )}
+
+          {currentPage === "about" && (
+            <PageWrapper key="about">
+              <AboutPage />
+            </PageWrapper>
+          )}
+
+          {currentPage === "faq" && (
+            <PageWrapper key="faq">
+              <FAQPage />
+            </PageWrapper>
+          )}
+
+          {currentPage === "support" && (
+            <PageWrapper key="support">
+              <SupportPage onNavigate={handleNavigate} />
+            </PageWrapper>
+          )}
+
+          {currentPage === "contact" && (
+            <PageWrapper key="contact">
+              <div
+                style={{
+                  minHeight: "100vh",
+                  background: "var(--surface)",
+                  padding: "5rem 1.5rem",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  justifyContent: "center",
+                }}
+              >
+                <div style={{ maxWidth: "560px", textAlign: "center" }}>
+                  <h1
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "2.5rem",
+                      fontWeight: 800,
+                      color: "var(--ink-dark)",
+                      letterSpacing: "-0.02em",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    Contact Us
+                  </h1>
+                  <p
+                    style={{
+                      fontSize: "1.0625rem",
+                      color: "var(--ink-mid)",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    Email:{" "}
+                    <a
+                      href="mailto:kaushalvadher09@gmail.com"
+                      style={{ color: "var(--olive)", fontWeight: 600 }}
+                    >
+                      kaushalvadher09@gmail.com
+                    </a>
+                  </p>
+                  <p
+                    style={{
+                      color: "var(--ink-light)",
+                      fontSize: "0.9375rem",
+                    }}
+                  >
+                    We'll respond to your inquiry as soon as possible.
+                  </p>
+                </div>
+              </div>
+            </PageWrapper>
+          )}
+        </AnimatePresence>
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer — hidden on auth pages */}
+      {!isAuthPage && <Footer />}
     </div>
   );
 };
+
+/* ─── Wrap everything in AuthProvider ────────────────────── */
+const App: React.FC = () => (
+  <AuthProvider>
+    <AppInner />
+  </AuthProvider>
+);
 
 export default App;

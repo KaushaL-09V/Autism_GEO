@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#cbebcd",
+                    "outline-variant": "#c3c8c0",
+                    "surface-bright": "#f7fbe7",
+                    "on-primary-fixed": "#092010",
+                    "surface": "#f7fbe7",
+                    "primary-container": "#1e3523",
+                    "on-tertiary-container": "#80a500",
+                    "on-secondary": "#ffffff",
+                    "primary": "#08200f",
+                    "tertiary-container": "#273500",
+                    "tertiary-fixed": "#c4f33a",
+                    "on-surface-variant": "#434842",
+                    "outline": "#737972",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4c644f",
+                    "secondary-fixed-dim": "#afceb2",
+                    "on-primary-fixed-variant": "#354c39",
+                    "tertiary": "#161f00",
+                    "surface-container-low": "#f2f6e2",
+                    "background": "#f7fbe7",
+                    "secondary-container": "#cbebcd",
+                    "tertiary-fixed-dim": "#a9d616",
+                    "on-surface": "#191d11",
+                    "surface-dim": "#d8dcc9",
+                    "surface-container-high": "#e6ead6",
+                    "inverse-on-surface": "#eff3df",
+                    "on-secondary-fixed": "#06200e",
+                    "on-secondary-fixed-variant": "#324d37",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#4f6b53",
+                    "on-primary-container": "#849e87",
+                    "error": "#ba1a1a",
+                    "secondary": "#49654e",
+                    "inverse-surface": "#2e3225",
+                    "surface-container-highest": "#e0e5d1",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ceeacf",
+                    "primary-fixed-dim": "#b2ceb4",
+                    "surface-container": "#ecf0dc",
+                    "on-background": "#191d11",
+                    "inverse-primary": "#b2ceb4",
+                    "on-tertiary-fixed-variant": "#3b4d00",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#161f00",
+                    "surface-variant": "#e0e5d1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7fbe7; color: #191d11; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 dark:bg-emerald-950/40 backdrop-blur-xl shadow-[0px_20px_40px_rgba(25,29,17,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-emerald-900 dark:text-emerald-50 font-headline">AutismPredictor</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest" href="#">Home</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest" href="#">Upload</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest" href="#">Results</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest" href="#">FAQ</a>
+<a class="text-emerald-950 dark:text-white font-bold border-b-2 border-emerald-400 uppercase text-[10px] tracking-widest" href="#">About</a>
+<a class="text-emerald-800/70 dark:text-emerald-200/70 font-medium hover:text-emerald-950 dark:hover:text-white transition-colors uppercase text-[10px] tracking-widest" href="#">Resources</a>
+</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg shadow-tertiary-fixed/20">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-12 max-w-screen-2xl mx-auto mb-32">
+<div class="relative rounded-xl overflow-hidden min-h-[716px] flex items-center bg-gradient-to-br from-primary to-primary-container p-16">
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
+<img alt="Abstract Neural Network Structure" class="w-full h-full object-cover" data-alt="Futuristic abstract representation of neural connections with floating translucent glowing nodes and ethereal light filaments on a dark forest green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7PxOnalN4fVCrCmcKjXoi2d6HZV4FHmrIDRt_9KWfv7Bzh2DpmSRwoDQo-kaOjupRFGxifkOLcQlhXw6cIxjGd4YD0Apd0sc-06swWcMKPvU9CpPnHqUhGG-IzQA1LoigXx5kNxv9J3wm84cLThYWnfkzOZGAUOFK5GSNyfrxr1X8CJgohPXZRf02yYXJfWApGc7xDniALe1kErvRGg_Iz5F7_Oq_YdoER9-yEcxDU8SKhiZ7K_U3EC663ocZ9by4qb8OigDkjgc"/>
+</div>
+<div class="relative z-10 max-w-3xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-[0.2em] uppercase mb-8">Clinical Grade Precision</span>
+<h1 class="text-white font-headline text-7xl font-extrabold tracking-tighter leading-[1.05] mb-8">What is the <br/><span class="text-tertiary-fixed">Autism Predictor?</span></h1>
+<p class="text-on-primary-container text-xl leading-relaxed max-w-2xl font-light">
+                        A proprietary diagnostic interface leveraging deep learning to analyze genetic biomarkers with surgical precision. We decode complex genomic patterns to provide early insights into neurodivergent developmental pathways.
+                    </p>
+</div>
+<!-- Bio-Pulse Indicator Decoration -->
+<div class="absolute right-24 bottom-24 flex items-center gap-4">
+<div class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed"></span>
+</div>
+<span class="text-emerald-100/50 text-[10px] font-bold tracking-widest uppercase">System Online: Live Analysis</span>
+</div>
+</div>
+</section>
+<!-- Methodology Bento Grid -->
+<section class="px-12 max-w-screen-2xl mx-auto mb-40">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div>
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight mb-4">Core Methodology</h2>
+<p class="text-on-surface-variant max-w-lg">Our multi-layered approach ensures data integrity and predictive accuracy across diverse genetic profiles.</p>
+</div>
+<div class="h-px bg-outline-variant/30 flex-grow mx-12 hidden lg:block"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Data Sources Card -->
+<div class="md:col-span-4 rounded-xl bg-surface-container-low p-10 flex flex-col justify-between group transition-all duration-500 hover:bg-surface-container-high">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">database</span>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4">Data Sources</h3>
+<p class="text-on-surface-variant leading-relaxed">Aggregated clinical datasets from over 40 global research institutions, harmonized for cross-genomic consistency.</p>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-white text-[10px] font-bold text-secondary uppercase tracking-wider">Clinical Trials</span>
+<span class="px-3 py-1 rounded-full bg-white text-[10px] font-bold text-secondary uppercase tracking-wider">Genomic Banks</span>
+</div>
+</div>
+<!-- Machine Learning (ANN) Card -->
+<div class="md:col-span-8 rounded-xl bg-primary text-white p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8">
+<div class="w-32 h-32 rounded-full border border-tertiary-fixed/20 animate-[spin_10s_linear_infinite] flex items-center justify-center">
+<div class="w-24 h-24 rounded-full border border-tertiary-fixed/40"></div>
+</div>
+</div>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-4xl text-tertiary-fixed mb-6">memory</span>
+<h3 class="text-3xl font-headline font-bold mb-6">Artificial Neural Network (ANN)</h3>
+<p class="text-on-primary-container text-lg max-w-xl leading-relaxed">Our 12-layer deep learning model utilizes unsupervised training to identify latent correlations between SNP mutations and diagnostic outcomes.</p>
+</div>
+<div class="mt-12">
+<div class="flex items-baseline gap-4">
+<span class="text-5xl font-headline font-extrabold text-tertiary-fixed">94.2%</span>
+<span class="text-on-primary-container uppercase text-[10px] tracking-widest font-bold">Predictive Accuracy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature Engineering Card -->
+<div class="md:col-span-12 rounded-xl bg-surface-container-lowest border border-outline-variant/15 p-12 flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">biotech</span>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4">Feature Engineering</h3>
+<p class="text-on-surface-variant leading-relaxed">We extract high-dimensional features from raw genetic sequences, prioritizing protein-disrupting variants that carry the most significant clinical weight.</p>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-4 w-full">
+<div class="p-6 rounded-lg bg-surface-container-low">
+<div class="text-primary font-bold text-xl mb-1">CNVs</div>
+<div class="text-on-surface-variant text-xs uppercase tracking-widest">Copy Number Variants</div>
+</div>
+<div class="p-6 rounded-lg bg-surface-container-low">
+<div class="text-primary font-bold text-xl mb-1">SNPs</div>
+<div class="text-on-surface-variant text-xs uppercase tracking-widest">Single Nucleotides</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Biomarkers Interactive Cards -->
+<section class="bg-surface-container-low py-32">
+<div class="px-12 max-w-screen-2xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight mb-4">Primary Biomarkers</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">The genetic loci our model identifies as high-probability indicators for neurodevelopmental divergence.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- NLGN1 -->
+<div class="glass-card p-8 rounded-xl border border-white/40 hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-8 text-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">genetics</span>
+</div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-2">NLGN1</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Involved in synapse formation and excitatory transmission.</p>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Risk Factor: High</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- PTEN -->
+<div class="glass-card p-8 rounded-xl border border-white/40 hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-8 text-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">science</span>
+</div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-2">PTEN</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">A tumor suppressor gene linked to macrocephaly and ASD.</p>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Risk Factor: Med</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- SHANK3 -->
+<div class="glass-card p-8 rounded-xl border border-white/40 hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-8 text-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-2">SHANK3</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Critical scaffolding protein at the post-synaptic density.</p>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Risk Factor: Critical</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</div>
+</div>
+<!-- MECP2 -->
+<div class="glass-card p-8 rounded-xl border border-white/40 hover:-translate-y-2 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-8 text-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">cell_tower</span>
+</div>
+<h4 class="text-2xl font-headline font-bold text-primary mb-2">MECP2</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Regulates the activity of other genes through methylation.</p>
+<div class="pt-6 border-t border-outline-variant/20 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Risk Factor: Med-High</span>
+<span class="material-symbols-outlined text-sm text-primary">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Limitations Section -->
+<section class="px-12 max-w-screen-2xl mx-auto py-40">
+<div class="bg-surface-container-lowest rounded-xl p-16 flex flex-col md:flex-row gap-20 items-center relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-tertiary-fixed"></div>
+<div class="md:w-1/2">
+<h2 class="text-5xl font-headline font-bold text-primary tracking-tight mb-8">Scope &amp; Limitations</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Our model is a predictive tool intended for clinical support, not a definitive standalone diagnosis. Transparency in machine learning is our priority.
+                    </p>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<p class="text-sm text-on-surface font-medium">Predictions are based on probability densities, not biological certainties.</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<p class="text-sm text-on-surface font-medium">Environmental factors and non-genetic contributors are currently outside of scope.</p>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">verified</span>
+<p class="text-sm text-on-surface font-medium">Clinical validation by a board-certified professional is always required.</p>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 relative">
+<div class="aspect-square rounded-full border-[1.5rem] border-surface-container-low flex items-center justify-center p-8">
+<div class="w-full h-full rounded-full overflow-hidden">
+<img alt="Laboratory Close-up" class="w-full h-full object-cover" data-alt="Ultra high-definition macro shot of laboratory equipment with glass pipettes and soft green liquid, bathed in clean clinical laboratory light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYd-i_aUq49howACuo2J2MaMuB65cK1F16hCAVHrHshxU7eWYW5CsnQyQOLU9sC8AgceJdo49dXTKaT3oRXGfdsSdm5xYXzZe9KGW8YM0sHmDZOH8PQ6OurSZd13JfVaQpH6-qE4fxaaAMsLtYVoPrUVVDUKlN5qapgBY0nN8X9vOSvJYIOJLcZtZrXeoIFYjKcb44vp-zk_RutLYMexINE_0w24PRRBD9Gm6seSxavkFES6GHQa3QS4Zq3fyKgh81oWGOz4JcCHw"/>
+</div>
+</div>
+<!-- Floating Tech Spec Overlay -->
+<div class="absolute top-1/2 -right-8 glass-card p-6 rounded-lg shadow-xl max-w-xs border border-white/50">
+<div class="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">Ethics Protocol</div>
+<p class="text-xs text-on-surface-variant">All models adhere to the AI Bio-Ethics standard (IEEE P7000) for medical diagnostic software.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-emerald-900 dark:bg-black w-full pt-24 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-screen-2xl mx-auto">
+<div class="col-span-1">
+<div class="text-xl font-bold text-lime-400 mb-6 font-headline">AutismPredictor</div>
+<p class="text-emerald-200/60 text-xs leading-relaxed max-w-xs">
+                    Advancing neurodevelopmental research through ethical AI and clinical-grade genomic analysis.
+                </p>
+</div>
+<div class="col-span-1">
+<h5 class="text-emerald-50 text-[10px] uppercase font-bold tracking-[0.2em] mb-6">Platform</h5>
+<ul class="space-y-3">
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Home</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Upload</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Results</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="text-emerald-50 text-[10px] uppercase font-bold tracking-[0.2em] mb-6">Information</h5>
+<ul class="space-y-3">
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">FAQ</a></li>
+<li><a class="text-lime-400 text-xs uppercase tracking-widest" href="#">About</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Resources</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="text-emerald-50 text-[10px] uppercase font-bold tracking-[0.2em] mb-6">Compliance</h5>
+<ul class="space-y-3">
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Privacy Policy</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Terms of Service</a></li>
+<li><a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Clinical Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 border-t border-white/10 pt-12 px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="text-emerald-200/60 text-[10px] uppercase tracking-widest">© 2024 AutismPredictor. Clinical Grade Precision.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-emerald-200/60 hover:text-lime-400 cursor-pointer">share</span>
+<span class="material-symbols-outlined text-emerald-200/60 hover:text-lime-400 cursor-pointer">lan</span>
+</div>
+</div>
+</footer>
+</body></html>

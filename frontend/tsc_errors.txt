@@ -1,0 +1,4 @@
+﻿src/components/Common/DNA3DViewer.tsx(47,7): error TS6133: 'Fallback' is declared but its value is never read.
+src/components/Pages/ResultsPage.tsx(8,10): error TS6133: 'formatProbability' is declared but its value is never read.
+src/components/Pages/ResultsPage.tsx(118,9): error TS6133: 'confidence' is declared but its value is never read.
+src/components/Pages/UploadPage.tsx(254,196): error TS18048: 'g.widthPct' is possibly 'undefined'.

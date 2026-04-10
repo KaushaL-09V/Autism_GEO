@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#cbebcd",
+                    "outline-variant": "#c3c8c0",
+                    "surface-bright": "#f7fbe7",
+                    "on-primary-fixed": "#092010",
+                    "surface": "#f7fbe7",
+                    "primary-container": "#1e3523",
+                    "on-tertiary-container": "#80a500",
+                    "on-secondary": "#ffffff",
+                    "primary": "#08200f",
+                    "tertiary-container": "#273500",
+                    "tertiary-fixed": "#c4f33a",
+                    "on-surface-variant": "#434842",
+                    "outline": "#737972",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#4c644f",
+                    "secondary-fixed-dim": "#afceb2",
+                    "on-primary-fixed-variant": "#354c39",
+                    "tertiary": "#161f00",
+                    "surface-container-low": "#f2f6e2",
+                    "background": "#f7fbe7",
+                    "secondary-container": "#cbebcd",
+                    "tertiary-fixed-dim": "#a9d616",
+                    "on-surface": "#191d11",
+                    "surface-dim": "#d8dcc9",
+                    "surface-container-high": "#e6ead6",
+                    "inverse-on-surface": "#eff3df",
+                    "on-secondary-fixed": "#06200e",
+                    "on-secondary-fixed-variant": "#324d37",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#4f6b53",
+                    "on-primary-container": "#849e87",
+                    "error": "#ba1a1a",
+                    "secondary": "#49654e",
+                    "inverse-surface": "#2e3225",
+                    "surface-container-highest": "#e0e5d1",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ceeacf",
+                    "primary-fixed-dim": "#b2ceb4",
+                    "surface-container": "#ecf0dc",
+                    "on-background": "#191d11",
+                    "inverse-primary": "#b2ceb4",
+                    "on-tertiary-fixed-variant": "#3b4d00",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#161f00",
+                    "surface-variant": "#e0e5d1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-xl shadow-[0px_20px_40px_rgba(25,29,17,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-emerald-900">AutismPredictor</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors" href="#">Home</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors" href="#">Upload</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors" href="#">Results</a>
+<a class="text-emerald-950 font-bold border-b-2 border-emerald-400" href="#">FAQ</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors" href="#">About</a>
+<a class="text-emerald-800/70 font-medium hover:text-emerald-950 transition-colors" href="#">Resources</a>
+</div>
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-3 rounded-full font-semibold hover:scale-105 transition-transform duration-300">
+                Get Started
+            </button>
+</div>
+</nav>
+<main class="pt-44 pb-24 px-6 md:px-12 max-w-screen-xl mx-auto">
+<header class="text-center mb-24">
+<div class="inline-block py-1 px-4 mb-6 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-[0.2em] uppercase">
+                Support Center
+            </div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-primary tracking-tighter leading-[1.1] mb-8">
+                How can we help?
+            </h1>
+<div class="relative max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute left-6 top-1/2 -translate-y-1/2 text-outline text-2xl">search</span>
+<input class="w-full bg-surface-container-lowest border-none shadow-[0px_20px_40px_rgba(25,29,17,0.06)] rounded-full py-6 pl-16 pr-8 text-lg focus:ring-2 focus:ring-tertiary-fixed-dim transition-all" placeholder="Search clinical documentation, tool guides, or safety protocols..." type="text"/>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<aside class="lg:col-span-3">
+<nav class="sticky top-32 space-y-2">
+<button class="w-full flex items-center space-x-4 px-6 py-4 rounded-xl bg-surface-container-low text-primary font-semibold transition-all">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+<span>Tool Usage</span>
+</button>
+<button class="w-full flex items-center space-x-4 px-6 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Understanding Results</span>
+</button>
+<button class="w-full flex items-center space-x-4 px-6 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>Medical &amp; Science</span>
+</button>
+<button class="w-full flex items-center space-x-4 px-6 py-4 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span>Privacy &amp; Safety</span>
+</button>
+</nav>
+</aside>
+<section class="lg:col-span-9 space-y-12">
+<div id="tool-usage">
+<h2 class="text-2xl font-bold mb-8 text-primary flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-lg" data-icon="construction">construction</span>
+</span>
+                        Tool Usage
+                    </h2>
+<div class="space-y-4">
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300">
+<button class="w-full px-8 py-7 flex justify-between items-center text-left">
+<span class="font-semibold text-xl text-primary">How do I start my first assessment?</span>
+<span class="material-symbols-outlined text-outline group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="px-8 pb-7 text-on-surface-variant leading-relaxed">
+                                To begin your assessment, navigate to the "Upload" tab in the top navigation. You'll need to provide video clips following our specific recording guidelines to ensure clinical-grade precision. Our step-by-step wizard will guide you through the requirements for camera placement and environmental lighting.
+                            </div>
+</div>
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300">
+<button class="w-full px-8 py-7 flex justify-between items-center text-left">
+<span class="font-semibold text-xl text-primary">What technical requirements are needed?</span>
+<span class="material-symbols-outlined text-outline group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="px-8 pb-7 text-on-surface-variant leading-relaxed">
+                                Our platform is optimized for modern browsers (Chrome, Safari, Firefox). For video recording, we recommend a device with at least a 1080p resolution camera. High-speed internet is required for the secure upload of biometric data packets.
+                            </div>
+</div>
+</div>
+</div>
+<div id="understanding-results">
+<h2 class="text-2xl font-bold mb-8 text-primary flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-lg" data-icon="analytics">analytics</span>
+</span>
+                        Understanding Results
+                    </h2>
+<div class="space-y-4">
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300">
+<button class="w-full px-8 py-7 flex justify-between items-center text-left">
+<span class="font-semibold text-xl text-primary">How should I interpret the confidence scores?</span>
+<span class="material-symbols-outlined text-outline group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="px-8 pb-7 text-on-surface-variant leading-relaxed">
+                                Confidence scores represent the statistical alignment between the uploaded behavioral data and our validated clinical benchmarks. Higher scores indicate a stronger correlation with specific neurodivergent markers identified in our peer-reviewed training sets.
+                            </div>
+</div>
+</div>
+</div>
+<div id="medical-science">
+<h2 class="text-2xl font-bold mb-8 text-primary flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="biotech">biotech</span>
+</span>
+                        Medical &amp; Science
+                    </h2>
+<div class="space-y-4">
+<div class="group bg-surface-container-lowest rounded-xl overflow-hidden transition-all duration-300">
+<button class="w-full px-8 py-7 flex justify-between items-center text-left">
+<span class="font-semibold text-xl text-primary">Is this a formal medical diagnosis?</span>
+<span class="material-symbols-outlined text-outline group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="px-8 pb-7 text-on-surface-variant leading-relaxed">
+                                No, AutismPredictor provides a clinical-grade screening tool, not a definitive medical diagnosis. It is designed to empower parents and healthcare providers with data-driven insights to facilitate further diagnostic discussions with specialized medical professionals.
+                            </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="mt-32 relative overflow-hidden rounded-xl bg-emerald-900 p-12 md:p-24 flex flex-col md:flex-row items-center justify-between text-white group">
+<div class="relative z-10 max-w-xl">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-tight">
+                    Still have <span class="text-tertiary-fixed">unanswered</span> questions?
+                </h2>
+<p class="text-emerald-100/80 text-lg mb-10">
+                    Our clinical support team is available 24/7 to help you navigate your journey and understand your results with clarity and compassion.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-tertiary-fixed text-on-tertiary-fixed px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform">
+                        Chat with Support
+                    </button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                        Schedule a Call
+                    </button>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-tertiary-fixed/10 rounded-full blur-[100px]"></div>
+<div class="hidden md:block relative z-10">
+<div class="w-64 h-80 rounded-lg overflow-hidden shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-700">
+<img alt="Support Specialist" class="w-full h-full object-cover" data-alt="Professional medical support specialist smiling warmly in a bright modern clinic environment, soft natural lighting, trust and compassion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtzbwlKa-KUvWp3eqx57L3e0HbUNKu3AtFJX_SHUnQ4HdSdAa3Bxb_Uk9Ia6dhkTZ7oVi55vZ8U3NGqTaOEOj9trw-8FVZhe9cnEHbSYzGubQ0anX3nmrV6eurQGPaEpXhhIdKiQpjGs94SFgpHMYgph3OmEwpMaXDxv4V8vvZ2o6hBSOaKd1O1-S0WIpUgixgLpNTSO53jCA0anA86AVmG2JkQ5PtlPYCZWSrlPuLmB2yhV5Xstz3o5kxVZmOdGQw-2G31jcfrkk"/>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-emerald-900 pt-24 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-screen-2xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-lime-400">AutismPredictor</div>
+<p class="text-emerald-200/60 text-xs uppercase tracking-widest leading-relaxed">
+                    © 2024 AutismPredictor.<br/>Clinical Grade Precision.
+                </p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-white font-bold text-sm tracking-widest uppercase mb-2">Platform</h4>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Home</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Upload</a>
+<a class="text-lime-400 text-xs uppercase tracking-widest" href="#">Results</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-white font-bold text-sm tracking-widest uppercase mb-2">Support</h4>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">FAQ</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">About</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Resources</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="text-white font-bold text-sm tracking-widest uppercase mb-2">Legal</h4>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-emerald-200/60 hover:text-white transition-all text-xs uppercase tracking-widest" href="#">Clinical Disclaimer</a>
+</div>
+</div>
+</footer>
+</body></html>

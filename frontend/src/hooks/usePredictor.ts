@@ -85,7 +85,7 @@ export function usePredictor(): UsePredictorReturn {
       }))
       .filter((g) => Number.isFinite(g.value))
       .sort((a, b) => b.value - a.value)
-      .slice(0, 50) // Keep top 50 for visualization
+      .slice(0, 10) // Keep top 10 genes (highest values) for visualization
       .map((g, idx) => ({
         ...g,
         ranking: idx + 1,
