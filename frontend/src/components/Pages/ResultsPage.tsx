@@ -5,7 +5,7 @@
  */
 import React from "react";
 import { PredictionResult, NormalizedGene } from "../../types";
-import { formatProbability, getConfidenceLevel } from "../../lib/cn.ts";
+import { getConfidenceLevel } from "../../lib/cn.ts";
 
 interface ResultsPageProps {
   prediction: PredictionResult | null;
@@ -115,7 +115,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ prediction, geneData, onUploa
     );
   }
 
-  const confidence = getConfidenceLevel(prediction.probability);
+  void getConfidenceLevel(prediction.probability); // used in handleExportResults/JSON above
   const isAutism = prediction.prediction === "Autism";
   var probabilityPct = Math.round(prediction.probability * 100);
   probabilityPct = probabilityPct <= 0 ? probabilityPct + 4 : probabilityPct > 20 ? probabilityPct - 9 : probabilityPct;

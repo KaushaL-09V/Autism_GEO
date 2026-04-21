@@ -21,6 +21,35 @@ export interface PredictionResponse {
   error?: string;
 }
 
+export interface ScreeningPayload {
+  A1: number;
+  A2: number;
+  A3: number;
+  A4: number;
+  A5: number;
+  A6: number;
+  A7: number;
+  A8: number;
+  A9: number;
+  A10_Autism_Spectrum_Quotient: number;
+  Age_Years: number;
+  Sex: string;
+  Ethnicity: string;
+  Jaundice: string;
+  Family_mem_with_ASD: string;
+  Who_completed_the_test: string;
+}
+
+export interface ScreeningPredictionResponse {
+  success: boolean;
+  data: {
+    prediction: "Autism" | "Control";
+    probability: number;
+    raw_label?: string;
+  };
+  error?: string;
+}
+
 // ============================================================================
 // Gene Data Types
 // ============================================================================

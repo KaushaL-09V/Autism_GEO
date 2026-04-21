@@ -251,7 +251,7 @@ const UploadPage: React.FC<UploadPageProps> = ({
                             <td style={{ padding: "1rem 0", color: T.primary, fontWeight: 700 }}>{g.gene}</td>
                             <td style={{ padding: "1rem 0", fontFamily: "monospace", fontSize: "0.875rem", color: T.onSurfaceVariant }}>{g.value.toFixed(4)}</td>
                             <td style={{ padding: "1rem 0", textAlign: "right" }}>
-                              <span style={{ fontSize: "0.6875rem", fontWeight: 700, color: T.onTertiaryFixed, padding: "0.25rem 0.5rem", background: T.tertiaryFixed, borderRadius: "0.25rem" }}>{g.widthPct.toFixed(1)}%</span>
+                              <span style={{ fontSize: "0.6875rem", fontWeight: 700, color: T.onTertiaryFixed, padding: "0.25rem 0.5rem", background: T.tertiaryFixed, borderRadius: "0.25rem" }}>{(g.widthPct ?? 0).toFixed(1)}%</span>
                             </td>
                           </tr>
                         ))}

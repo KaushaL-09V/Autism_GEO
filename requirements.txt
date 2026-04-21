@@ -10,3 +10,6 @@ streamlit
 requests
 Flask
 Flask-Cors
+seaborn
+Flask-SQLAlchemy
+Flask-Migrate

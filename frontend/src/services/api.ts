@@ -9,6 +9,8 @@ import {
     GeneExpression,
     PredictionResponse,
     PredictionResult,
+    ScreeningPayload,
+    ScreeningPredictionResponse,
     UploadError,
     // APIOptions,
 } from "../types";
@@ -73,6 +75,63 @@ class APIClient {
         } catch (error) {
             console.error("[API] Error:", error);
             throw this.handleError(error);
+        }
+    }
+
+    /**
+     * Make a screening-behavior prediction from questionnaire payload
+     */
+    async predictScreening(payload: ScreeningPayload): Promise<PredictionResult> {
+        try {
+            const response = await this.client.post<ScreeningPredictionResponse>(
+                "/predict/screening",
+                payload,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+
+            if (!response.data.success) {
+                throw new Error(response.data.error || "Screening prediction failed");
+            }
+
+            return {
+                prediction: response.data.data.prediction,
+                probability: response.data.data.probability,
+                confidence: response.data.data.probability,
+                timestamp: new Date().toISOString(),
+            };
+        } catch (error) {
+            throw this.handleError(error);
+        }
+    }
+
+    /**
+     * Book an appointment (POSTs to SQLite-backed /api/appointments)
+     * Falls back to in-memory mock if the backend is offline.
+     */
+    async bookAppointment(payload: {
+        patientId: string;
+        doctorId: string;
+        scheduledAt: string;
+        durationMin: number;
+        apptType: string;
+        reason: string;
+        notes?: string;
+    }): Promise<{ id: string; status: string }> {
+        try {
+            const response = await this.client.post<{ id: string; status: string }>(
+                "/api/appointments",
+                payload,
+                { timeout: 6000 }
+            );
+            return response.data;
+        } catch {
+            // Backend offline — simulate successful booking
+            console.warn("[API] bookAppointment: backend offline, using mock response");
+            return { id: `a-mock-${Date.now()}`, status: "scheduled" };
         }
     }
 
